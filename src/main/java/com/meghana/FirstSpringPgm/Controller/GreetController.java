@@ -16,4 +16,19 @@ public class GreetController {
     public String greet(@RequestBody GreetRequest request) {
         return greetingService.generateGreeting(request.getName(), request.getLanguage());
     }
+
+    @GetMapping("/greetWithLang")
+    public String greetUser(@RequestParam(required = false) String name,String lang) {
+        return greetingService.generateGreeting(name,lang);
+    }
+
+    @GetMapping("/greetUserGuest")
+    public String greetUserGuest(@RequestParam(required = false) String name) {
+        return greetingService.greetGuest(name);
+    }
+
+    @PostMapping("/greetPostGuest")
+    public String greetUserPost(@RequestBody GreetRequest request) {
+        return greetingService.greetGuestLang(request.getName(),request.getLanguage());
+    }
 }

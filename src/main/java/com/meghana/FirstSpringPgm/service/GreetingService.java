@@ -14,4 +14,18 @@ public class GreetingService {
             return "Hello " + name;
         }
     }
+
+    public String greetGuest(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            return "Hello, Guest!";
+        }
+        return "Hello, " + name + "!";
+    }
+
+    public String greetGuestLang(String name,String language) {
+        if (language == null || language.trim().isEmpty()) {
+            return "Hello, Guest!";
+        }
+        return language +name + "!";
+    }
 }
