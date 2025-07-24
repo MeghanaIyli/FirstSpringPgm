@@ -17,6 +17,7 @@ public class GreetController {
         return greetingService.generateGreeting(request.getName(), request.getLanguage());
     }
 
+    
     @GetMapping("/greetWithLang")
     public String greetUser(@RequestParam(required = false) String name,String lang) {
         return greetingService.generateGreeting(name,lang);
