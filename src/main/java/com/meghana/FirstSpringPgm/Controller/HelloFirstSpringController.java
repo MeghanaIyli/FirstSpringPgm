@@ -1,4 +1,4 @@
-package com.meghana.FirstSpringPgm;
+package com.meghana.FirstSpringPgm.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,7 +13,7 @@ public class HelloFirstSpringController {
         return "Hello Spring Boot!";
     }
 
-    @PostMapping("/greet")
+    @PostMapping("/greetFirstPgm")
     public String greet(@RequestBody String name) {
         return "Hello, " + name + "!";
     }
